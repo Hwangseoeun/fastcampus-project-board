@@ -8,10 +8,12 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 spring:
+  config:
+    import: classpath:env.yaml
   datasource:
     url: jdbc:mysql://localhost:3306/board
-    username: ssun
-    password: ${DB_PW}
+    username: ${DB.USERNAME}
+    password: ${DB.PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:h2:mem:testdb
 #    username: sa
